@@ -1,0 +1,115 @@
+<mvc:View controllerName="sap.wf.collection.workflowtaskuimodule.controller.MyTaskUI" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <App id="app">
+        <pages>
+            <Page showHeader="false" showFooter="false">
+                <content>
+                <ObjectHeader title="{/task/Title}" titleActive="false" id="__header0">
+                            <attributes>
+                                <ObjectAttribute title="{i18n>customername}" text="{payloadModel>/CustomerName}"/>
+                                <ObjectAttribute title="{i18n>customerno}" text="{payloadModel>/CustomerNumber}"/>
+                            </attributes>
+                        </ObjectHeader>
+            <Panel>
+            <headerToolbar>
+            <OverflowToolbar>
+                <Title text="{i18n>invoicedetails}"/>
+            </OverflowToolbar>
+            </headerToolbar>
+            <content>
+                <VBox class="sapUiSmallMargin">
+                    <Table inset="false" items="{payloadModel>/dunning}">
+                    <columns>
+			            <Column demandPopin="true" hAlign="Center">
+				            <Text text="{i18n>doccompanycode}" />
+			            </Column>
+                        <Column demandPopin="true" hAlign="Center">
+                            <Text text="{i18n>docnumber}" />
+                        </Column>
+                        <Column demandPopin="true" hAlign="Center">
+                            <Text text="{i18n>reference}" />
+                        </Column>
+                        <Column demandPopin="true" hAlign="Center">
+                            <Text text="{i18n>netduedate}" />
+                        </Column>
+                        <Column demandPopin="true" hAlign="Center">
+                            <Text text="{i18n>dunninglevel}" />
+                        </Column>
+                        <Column demandPopin="true" hAlign="Center">
+                            <Text text="{i18n>arrearsbynet}" />
+                        </Column>
+                        <Column demandPopin="true" hAlign="Center">
+                            <Text text="{i18n>amountfc}" />
+                        </Column>
+		            </columns>
+		            <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{payloadModel>CompanyCode}" />
+                                <Text text="{payloadModel>DocumentNumber}" />
+                                <Text text="{payloadModel>ReferenceID}" />
+                                <Text text="{payloadModel>NetDueDate}" />
+                                <Text text="{payloadModel>CurrentDunningLevel}" />
+                                <Text text="{payloadModel>ArrearsByNetDueDate}" />
+                                <Text text="{payloadModel>Amount}" />
+                                </cells>
+                        </ColumnListItem>
+		            </items>
+	                </Table>
+                    </VBox>
+                    </content>
+                    </Panel>
+                    <Panel>
+            <headerToolbar>
+            <OverflowToolbar>
+                <Title text="{i18n>history}"/>
+            </OverflowToolbar>
+            </headerToolbar>
+            <content>
+                <VBox class="sapUiSmallMargin">
+                    <Table inset="false" items="{payloadModel>/History}">
+                    <columns>
+                        <Column demandPopin="true" hAlign="Center">
+				            <Text text="{i18n>userid}" />
+			            </Column>
+                        <Column demandPopin="true" hAlign="Center">
+				            <Text text="{i18n>role}" />
+			            </Column>
+			            <Column demandPopin="true" hAlign="Center">
+				            <Text text="{i18n>action}" />
+			            </Column>
+                        <Column demandPopin="true" hAlign="Center">
+                            <Text text="{i18n>comments}" />
+                        </Column>
+		            </columns>
+		            <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{payloadModel>UserId}" />
+                                <Text text="{payloadModel>Role}" />
+                                <Text text="{payloadModel>Action}" />
+                                <Text text="{payloadModel>Comment}" />
+                            </cells>
+                        </ColumnListItem>
+		            </items>
+	                </Table>
+                    </VBox>
+                    </content>
+                    </Panel>
+                     <Panel>
+            <headerToolbar>
+            <OverflowToolbar>
+                <Title text="{i18n>commentsection}"/>
+            </OverflowToolbar>
+            </headerToolbar>
+            <content>
+            <HBox alignItems="Center" class="sapUiSmallMargin">
+                    <Label text="{i18n>comments}" class="sapUiTinyMarginEnd"/>
+                    <TextArea id="idcomments"/>
+                    </HBox>
+                    </content>
+                    </Panel>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>
